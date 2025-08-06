@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "John",
+      "secondname": "Doe",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "firstname": "Alice",
+      "secondname": "Smith",
+      "password": "abcdef"
+    },
+    {
+      "id": 3,
+      "firstname": "jenan",
+      "secondname": "abuhassanein",
+      "password": "123456"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 3,
+      "title": "Post",
+      "body": "bbb"
+    }
+  ]
+}
