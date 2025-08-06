@@ -64,8 +64,9 @@ const app = require('../index');
       .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
-         expect(res.body.userId).toBe();
-         expect(res.body.posts).toBeDefined();
+        expect(Array.isArray(res.body)).toBe(true);
+        expect(res.body.length).toBeGreaterThan(0);
+        expect(res.body[0].userId).toBe(1);
          done();
       })
   });
