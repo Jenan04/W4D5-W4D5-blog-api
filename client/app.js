@@ -1,19 +1,19 @@
 
-const API_URL = 'http://localhost:5000'; // غيّريها لو السيرفر مش شغال على هذا البورت
+const API_URL = 'http://localhost:5000';
 
 const formContainer = document.getElementById('form-container');
 const message = document.getElementById('message');
 const output = document.getElementById('output');
 
-// عرض رسالة
-function showMessage(text, error = false) {
+
+const showMessage = (text, error = false) => {
   message.textContent = text;
   message.className = error ? 'text-red-600 text-center mt-4' : 'text-green-600 text-center mt-4';
   setTimeout(() => message.textContent = '', 3000);
 }
 
-// إظهار نموذج إضافة مستخدم
-function renderAddUserForm() {
+
+const renderAddUserForm = () => {
   formContainer.innerHTML = `
     <form id="add-user-form" class="space-y-4">
 
@@ -76,8 +76,8 @@ function renderAddUserForm() {
   });
 }
 
-// إظهار نموذج إضافة بوست
-function renderAddPostForm() {
+
+const renderAddPostForm = () => {
   formContainer.innerHTML = `
     <form id="add-post-form" class="space-y-4">
       <input type="number" id="post-user-id" placeholder="User ID" class="w-full border p-2 rounded" required />
@@ -131,8 +131,8 @@ function renderAddPostForm() {
   });
 }
 
-// عرض جميع البوستات
-async function renderAllPosts() {
+
+const renderAllPosts = async () => {
   formContainer.innerHTML = '';
   output.innerHTML = '';
 
@@ -167,7 +167,7 @@ async function renderAllPosts() {
   }
 }
 
-function renderGetUserPostsForm() {
+const renderGetUserPostsForm = () => {
   formContainer.innerHTML = `
     <form id="get-user-posts-form" class="space-y-4">
       <input type="number" id="user-id-input" placeholder="Enter User ID" class="w-full border p-2 rounded" required />
@@ -222,11 +222,11 @@ function renderGetUserPostsForm() {
 }
 
 
-// ربط الأزرار
+
 document.getElementById('show-add-user').addEventListener('click', renderAddUserForm);
 document.getElementById('show-add-post').addEventListener('click', renderAddPostForm);
 document.getElementById('show-posts').addEventListener('click', renderAllPosts);
 document.getElementById('show-user-posts').addEventListener('click', renderGetUserPostsForm);
 
-// واجهة البداية
+
 renderAddUserForm();
