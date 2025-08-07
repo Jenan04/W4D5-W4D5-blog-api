@@ -4,11 +4,11 @@ const app = require('../index');
 
 
   test('POST /users add new user', (done) => {
-    // const newUser = {
-    //   firstname: 'John',
-    //   secondname: 'Doe',
-    //   password: 'G3'
-    // }
+    const newUser = {
+      firstname: 'John',
+      secondname: 'Doe',
+      password: 'G3'
+    }
     request(app)
       .post('/users')     
       .send(newUser)
@@ -27,11 +27,11 @@ const app = require('../index');
 
 
   test('POST /posts add new post', (done) => {
-    // const newpost = {
-    //   userId: 1,
-    //   title: 'Doe',
-    //   body: 'G3'
-    // }
+    const newpost = {
+      userId: 1,
+      title: 'Doe',
+      body: 'G3'
+    }
     request(app)
       .post('/posts')     
       .send(newpost)
